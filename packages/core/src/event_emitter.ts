@@ -81,6 +81,14 @@ export interface EventEmitter<T> extends Subject<T> {
    * @param value The value to emit.
    */
   emit(value?: T): void;
+
+  /**
+   * The type of next() will change from `next(value?: T)` to `next(value: T)`
+   * in an upcoming version of RxJS. This is a temporary solution to prevent
+   * breaking targets during the migration.
+   */
+  next(value?: T): void;
+
   /**
    * Registers handlers for events emitted by this instance.
    * @param generatorOrNext When supplied, a custom handler for emitted events.
